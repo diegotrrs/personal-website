@@ -34,6 +34,7 @@ export interface HeroProps {
   name: string;
   specialty: string;
   summary: string;
+  resumeSummary?: string;
   email: string;
 }
 

@@ -32,7 +32,9 @@ export const SITE_CONTENT: SiteContent = {
     name: "Diego Torres",
     specialty: "Tech Lead & Software Engineer",
     summary:
-      "I'm Diego, a Software Engineer based in London. I've worked at both startups and larger companies, across frontend, backend and mobile, and I've led teams along the way. These days I mostly build scalable backend systems in TypeScript on AWS, with a lot of API integration work. I also use AI coding agents to ship faster, while keeping good practices.",
+      "Software Engineer with experience across startups and larger companies, working across backend, frontend and mobile development, as well as technical leadership. Currently focused on building scalable backend systems in TypeScript on AWS, with extensive API integration experience. Builds with AI agents across the development lifecycle, shipping faster while maintaining good engineering practices.",
+    resumeSummary:
+      "Software Engineer with experience across startups and larger companies, working across backend, frontend and mobile development, as well as technical leadership. Currently focused on building scalable backend systems in TypeScript on AWS, with extensive API integration experience. Builds with AI agents across the development lifecycle, shipping faster while maintaining good engineering practices.",
     email: "diego.torres.arguedas@gmail.com",
   },
   experience: [
