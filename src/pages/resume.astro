@@ -13,6 +13,10 @@ const { socialLinks } = SITE_CONFIG;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{hero.name} — Resume</title>
     <style>
+      @page {
+        margin: 1cm;
+      }
+
       @media print {
         .no-print {
           display: none;
@@ -120,6 +124,8 @@ const { socialLinks } = SITE_CONFIG;
       <p class="mb-6 text-sm leading-relaxed text-[#444]">{hero.summary}</p>
 
       <hr class="mb-8 border-[#ddd]" />
+
+      <div class="mb-6"></div>
 
       <!-- Two-column body -->
       <div class="grid grid-cols-[1fr_280px] gap-12">
