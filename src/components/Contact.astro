@@ -1,0 +1,51 @@
+---
+import Section from "./Section.astro";
+
+interface Props {
+  email: string;
+}
+
+const { email } = Astro.props;
+---
+
+<Section text="Contact" href="contact">
+  <div class="rounded-2xl border border-neutral/20 bg-[#1c232d]/60 p-8">
+    <p class="mb-4 font-mono text-xs tracking-[0.25em] text-primary uppercase">
+      Email · Best way to reach me
+    </p>
+    <p class="mb-8 font-serif text-2xl font-medium break-all text-white md:text-4xl">
+      {email}
+    </p>
+    <div class="flex flex-wrap gap-3">
+      <button
+        type="button"
+        id="copy-email"
+        data-email={email}
+        class="rounded-lg border border-neutral/20 bg-black/60 px-5 py-2.5 text-sm text-white transition-colors hover:border-neutral/50"
+      >
+        Copy
+      </button>
+      <a
+        href={`mailto:${email}`}
+        class="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+      >
+        Send a message
+      </a>
+    </div>
+  </div>
+</Section>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>("#copy-email");
+
+  button?.addEventListener("click", async () => {
+    const email = button.dataset.email ?? "";
+    try {
+      await navigator.clipboard.writeText(email);
+      button.textContent = "Copied!";
+    } catch {
+      button.textContent = "Couldn't copy";
+    }
+    setTimeout(() => (button.textContent = "Copy"), 2000);
+  });
+</script>

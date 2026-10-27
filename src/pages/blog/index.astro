@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<Layout>
+  <section class="py-24">
+    <h1 class="mb-2 font-serif text-4xl font-bold text-white">Blog</h1>
+    <p class="mb-12 text-base text-neutral">Thoughts on software engineering.</p>
+    <ul class="space-y-8">
+      {posts.map((post) => (
+        <li>
+          <a href={`/blog/${post.id}`} class="group block">
+            <h2 class="font-serif text-xl font-semibold text-white transition-colors group-hover:text-primary">
+              {post.data.title}
+            </h2>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Layout>
