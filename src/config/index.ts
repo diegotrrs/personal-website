@@ -158,7 +158,7 @@ export const SITE_CONTENT: SiteContent = {
         "Celery",
         "REST APIs",
         "GraphQL",
-        "SOAP",
+        "Open API",
         "WebSockets",
         "OAuth2",
       ],
